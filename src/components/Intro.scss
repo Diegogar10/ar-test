@@ -1,0 +1,58 @@
+@import './../assets/styles/global.scss';
+
+.intro__project {
+  width: 100%;
+  background-image: url(./../assets/images/Fachada-Cajica-home1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  .project__title {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    height: 500px;
+
+    h1 {
+      font-family: $font-secundary;
+      font-weight: bold;
+      font-size: 68px;
+      color: white;
+      text-align: center;
+      height: max-content;
+      text-shadow: $dark-color-primary 0 0 15px;
+    }
+
+    h2 {
+      @extend h1;
+      font-size: 56px;
+      margin-top: 25px;
+      text-shadow: $light-color-primary 0 0 20px;
+    }
+  }
+
+  .project__owner {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: 100%;
+    height: 380px;
+    margin-top: -150px;
+    background: linear-gradient(0deg, $botton-color-secondary 25%, #d80915af 60%, rgba(245,245,245,0) 100%);
+
+    figure {
+      margin: 0 100px;
+      margin-bottom: 50px;
+      width: 120px;
+      height: 72px;
+
+      img {
+        width: 100%;
+        height: 100%;
+
+      }
+    }
+
+  }
+}

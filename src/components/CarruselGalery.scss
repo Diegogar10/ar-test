@@ -1,0 +1,241 @@
+@import './../assets/styles/global.scss';
+
+.carrusel__container {
+  width: 85%;
+  height: 70vh;
+  margin: 0 auto;
+  padding-top: 15vh;
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  grid-template-rows: 1fr 8fr;
+  grid-template-areas: 
+    "menu     etapa"
+    "galeria  texto";
+
+  .carrusel__menu {
+    grid-area: menu;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    .menu__container {
+      display: flex;
+      
+      li {
+        list-style: none;
+
+        a {
+          display: block;
+          padding: 10px;
+          text-decoration: none;
+          font-family: $font-secundary;
+          color: #ffffff70;
+          font-weight: 500;
+        }
+
+        &:hover > a {
+          color: #ffffffc0;
+        }
+      }
+
+      .visited {
+        a {
+          color: white;
+        }
+      }
+    }
+
+    .menu__buttons {
+      display: flex;
+      justify-content: center;
+      button {
+        margin: 0;
+        padding: 0;
+        padding-left: 5px;
+        margin-left: 5px;
+        display: grid;
+        place-items: center;
+        width: 30px;
+        height: 30px;
+        border: none;
+        background: none;
+        color:  white;
+        border-radius: 50%;
+        background-color: #033746;
+        cursor: pointer;
+
+        &:first-child {
+          transform: rotate(180deg);
+        }
+
+        &:hover {
+          background-color: #0e4f61;
+        }
+      }
+    }
+  }
+  .carrusel__etapa {
+    grid-area: etapa;
+    width: 100%;
+    display: grid;
+    place-items: center;
+    h3 {
+      color: white;
+      text-transform: uppercase;
+      font-weight: bold;
+      font-family: $font-primary;
+      font-size: $letter-size-xl;
+    }
+  }
+  .carrusel__images {
+    grid-area: galeria;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    
+    .carrusel__static {
+      display: flex;
+      width: 300%;
+      height: 100%;
+
+      .images__container {
+        width: 100%;
+        height: 100%;
+        border-radius: 10px;
+        overflow: hidden;
+        background-color: black;
+  
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+    
+
+  }
+  .carrusel__information {
+    grid-area: texto;
+    color: white;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .information__static {
+      display: flex;
+      width: 300%;
+      height: 100%;
+
+      .information__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+
+        &:nth-child(2) > h3 {
+          background: -webkit-linear-gradient(left,#1fb3ff,#9b32ef);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;  
+        }
+        
+        &:nth-child(3) > h3 {
+          background: -webkit-linear-gradient(left,#0bb6e1,#25eda1); 
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+
+        h3 {
+          position: relative;
+          margin: 8px ;
+          font-size: $letter-size-xxl;
+          text-align: center;
+          font-weight: bold;
+          font-family: $font-secundary;
+          background: -webkit-linear-gradient(left,#456df3,#27cffe 65%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+
+          span {
+            display: block;
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            font-size: $letter-size-l;
+            -webkit-text-fill-color:#27cffe;
+          }
+        }
+
+        .data__container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          width: 100%;
+
+          .area,
+          .spaces {
+            display: flex;
+            width: 55%;
+            justify-content: space-between;
+          }
+
+          .data__info {
+            margin: 20px 0;
+            height: 75px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-be;
+
+            h4,h5 {
+              font-family: $font-secundary;
+              font-weight: 500;
+            }
+          }
+
+          .spaces {
+            width: 50%;
+          }
+          .button {
+            button {
+              font-family: $font-primary;
+              font-size: $letter-size-m;
+              font-weight: bold;
+              padding: 12px;
+              color: $letter-color-secondary;
+              margin-left: 30px;
+              border: none;
+              border-radius: 5px;
+              background: white;
+              box-shadow: white 0 0 5px;
+
+              &:hover {
+                color: white;
+                background: $letter-color-secondary;
+              }
+            }
+          }
+        }
+      }
+    }
+
+  }
+
+}
+
+.carrusel__container.right {
+  grid-template-columns: 2fr 3fr;
+  grid-template-rows: 1fr 8fr;
+  grid-template-areas: 
+    "etapa     menu"
+    "texto  galeria";
+
+    .carrusel__menu {
+      flex-direction: row-reverse;
+    }
+  
+}

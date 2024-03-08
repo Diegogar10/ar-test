@@ -1,0 +1,95 @@
+@import './../assets/styles/global.scss';
+
+.video--item1 {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  cursor: pointer;
+
+  .video__container {
+    position: relative;
+    width: 100%;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    div {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background-color: #230f2b50;
+
+      button {
+        position: relative;
+        padding: 0;
+        margin: 0;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: none;
+        background-color: #ffffff50;
+
+        svg {
+          fill: $letter-color-secondary;
+          transform: scale(.70);
+          transition: all ease 800ms;
+        }
+
+
+        &::after {
+          position: absolute;
+          content: '';
+          left: 10px;
+          right: 0;
+          top: 0;
+          bottom: 0;
+          width: 0;
+          height: 0;
+          margin: auto;
+          border-left: 35px solid $letter-color-secondary;
+          border-bottom: 20px solid transparent;
+          border-top: 20px solid transparent;
+        }
+      }
+    }
+  }
+
+  .text__title {
+    position: relative;
+    width: 100%;
+    font-family: $font-secundary;
+    font-size: $letter-size-l;
+    font-weight: 500;
+    letter-spacing: 1px;
+    padding: 20px 0 7px 0;
+    
+    div {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 4px;
+      border-radius: 3px;
+      background-color: $letter-color-secondary; 
+      width: 0;
+      transition: all ease 0.5s;
+    }
+  }
+
+  &:hover > .text__title {
+    color: $letter-color-secondary;
+    
+    div {
+      width: 100%;
+    }
+  }
+
+  &:hover > .video__container > div > button > svg {
+    transform: scale(1) rotateZ(-180deg);
+  }
+}

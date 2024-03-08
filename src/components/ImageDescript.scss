@@ -1,0 +1,106 @@
+@import './../assets/styles/global.scss';
+
+.image__descript {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  
+  .image__container {
+    position: relative;
+    width: 49%;
+    overflow: hidden;
+    z-index: 1;
+
+    /* .image__marco {
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    } */
+
+    .image__content {
+      position: absolute;
+      margin-left: 10px;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      z-index: 0;
+      border: $letter-color-secondary solid 10px;
+      border-bottom: $letter-color-secondary solid 25px;
+      border-radius: 5px;
+      overflow: hidden;
+      
+      img {
+        width: calc(100% - 10px);
+        height: calc(100% - 10px);
+        margin: 5px;
+        object-fit: cover;
+        transform: translateX(100%);
+        opacity: 0;
+      }
+      
+      .animated  {
+        opacity: 1;
+        transform: translateX(0);
+        @include cardTransition_speed_fast;
+      }
+    }
+  }
+
+  .text__container {
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 49%;
+    z-index: 0;
+
+    .text__title {
+      text-align: start;
+      width: 70%;
+      font-size: $letter-size-xxl;
+      font-weight: 600;
+      color: $letter-color-secondary;
+      transform: translateX(-110%);
+      opacity: 0;
+    }
+    p {
+      text-align: justify;
+      width: 70%;
+      margin-top: 20px;
+      font-size: $letter-size-l;
+      line-height: 22px;
+      font-weight: 500;
+      font-family: $font-secundary;
+      color: $letter-color-secondary;
+      transform: translateX(-125%);
+      opacity: 0;
+    }
+  }
+  
+  .animated {
+    .text__title {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all ease-in 0.7s;
+    }
+    p {
+      opacity: 1;
+      transform: translateX(0);
+      transition: all ease-in 0.9s;
+    }
+
+  }
+}

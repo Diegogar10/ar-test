@@ -1,0 +1,57 @@
+// Fuentes
+$font-primary: "Montserrat", sans-serif;
+$font-secundary: "Ubuntu", sans-serif;
+
+// Colores
+$botton-color-primary: #d80915;
+$botton-color-secondary: #f21d41;
+$botton-color-tertiary: #bce3c5;
+//b90b14-f21d41-#ebebbc-#bce3c5
+$letter-color-primary: #ebebbc;
+$letter-color-secondary: #230f2b;
+$light-color-primary: #fffab8;
+$light-color-secondary: #fffcd89f;
+$light-color-tertiary: #82b3ae;
+$dark-color-primary: #000000a0;
+
+
+//tamaños de fuente 
+
+$letter-size-xs: 10px;
+$letter-size-s: 12px;
+$letter-size-m: 14px;
+$letter-size-l: 18px;
+$letter-size-xl: 22px;
+$letter-size-xxl: 32px;
+$letter-size-big-xs: 40px;
+$letter-size-big-s: 48px;
+$letter-size-big-m: 54px;
+
+// clases genericas
+
+@mixin separator {
+  position: absolute;
+  content: '';
+  left: 100px;
+  right: 100px;
+  top: 40px;
+  background-color: white;
+  opacity: 0.6;
+  height: 1px;
+  border-radius: 1px;
+}
+
+@mixin cardTransition {
+  transition: all ease-out 1.3s;
+}
+
+@mixin cardTransition_speed_fast {
+  transition: all ease 0.5s;
+}
+
+@mixin cardAmimated {
+  height: 100%;
+  border-radius: 50%;
+  transform: translateX(0px) translateY(0px) scale(1) rotateY(0deg) rotateX(0deg) skewX(0deg) skewY(0deg);
+  @include cardTransition();
+}

@@ -1,0 +1,34 @@
+@import './../assets/styles/global.scss';
+
+.video__reviews {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+  background-color: $botton-color-secondary;
+  width: 100%;
+  height: 100vh;
+
+  &::after {
+    @include separator;
+  }
+
+  h2 {
+    text-transform: uppercase;
+    font-family: $font-secundary;
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    font-size: $letter-size-xxl;
+    font-weight: bold;
+  }
+
+  .videos__container {
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 25px;
+  }
+}

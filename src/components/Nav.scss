@@ -1,0 +1,115 @@
+@import './../assets/styles/global.scss';
+
+.header__container {
+  width: 100%;
+
+  .header__functions {
+    background-color: black;
+    .functions__container {
+      display: flex;
+      justify-content: end;
+      margin-right: 35px;
+      li{
+        display: flex;
+        
+        &:last-child {
+          button {
+            background-color: $botton-color-primary;
+          }
+        }
+
+        &:first-child {
+          button {
+            position: relative;
+            &::after {
+              position: absolute;
+              content: '';
+              width: 1px;
+              right: 0;
+              top:5px;
+              bottom: 5px;
+              background-color: white;
+              opacity: 0.3;
+
+
+            }
+          }
+        }
+        
+        button {
+          display: flex;
+          align-items: center;
+          padding: 10px 25px;
+          background: none;
+          border: none;
+          border-radius: 5px;
+          color: white;
+          font-weight: bold;
+          font-family: $font-primary;
+          
+          svg {
+            margin-right: 10px;
+          }
+
+          &:hover {
+            background-color: #ffffff35;
+          }
+        }
+      }
+    }
+  }
+
+  .header__navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: #00000030 0 0 10px 10px;
+
+    .navbar__logo {
+      margin-left: 60px;
+      li {
+          list-style: none;
+      }
+    }
+
+    .navbar__container {
+      display: flex;
+      margin-right: 80px;
+
+      a {
+        display: block;
+        text-decoration: none;
+        padding: 35px 22px;
+        font-family: $font-primary;
+        font-weight: 600;
+        color: black;
+        letter-spacing: 0.1px;
+        div {
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          height: 4px;
+          border-radius: 3px;
+          background-color: $botton-color-primary; 
+          width: 0;
+          transition: all ease 0.5s;
+        }
+        
+        &:hover {
+          @extend .selected;
+        }
+      }
+
+      .selected {
+        position: relative;
+        color: $botton-color-primary;
+        background-color: mix($botton-color-primary,#ffffff,10%);
+        
+        div {
+          width: 100%;
+        }
+      }
+    }
+  }
+}

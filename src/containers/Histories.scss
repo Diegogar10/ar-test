@@ -1,0 +1,20 @@
+@import './../assets/styles/global.scss';
+
+.histories__container {
+  position: relative;
+  color: white;
+  background-color: $botton-color-secondary;
+
+  &::after {
+    @include separator;
+  }
+
+  h2 {
+    font-family: $font-secundary;
+    text-align: center;
+    padding: 30px;
+    padding-top: 150px;
+    font-size: $letter-size-big-s;
+    font-weight: bold;
+  }
+}
