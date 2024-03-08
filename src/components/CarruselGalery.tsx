@@ -147,7 +147,7 @@ const CarruselGalery = (
                     </div>
                   </div>
                   <div className='button'>
-                    <button>Cotiza y seprar</button>
+                    <button>Cotiza y separar</button>
                   </div>
                 </div>
               </div>
