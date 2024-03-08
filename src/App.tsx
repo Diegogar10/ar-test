@@ -7,6 +7,7 @@ import MosaicCards from './components/MosaicCards'
 import Areas from './containers/Areas'
 import Benefits from './containers/Benefits'
 import Models from './containers/Models'
+import Contact from './containers/Contact'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Areas></Areas>
         <Benefits></Benefits>
         <Models></Models>
+        <Contact></Contact>
       </MainTemplate>
     </>
   )
