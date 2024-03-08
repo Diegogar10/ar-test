@@ -5,12 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run install-with-legacy-peer-deps && vite build",
+    "build": "vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "install-with-legacy-peer-deps": "npm install --legacy-peer-deps"
+    "preview": "vite preview"
   },
-  "dependencies": {
+  "peerDependencies": {
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "react": "^18.2.0",
