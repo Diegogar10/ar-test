@@ -8,6 +8,7 @@ import Areas from './containers/Areas'
 import Benefits from './containers/Benefits'
 import Models from './containers/Models'
 import Contact from './containers/Contact'
+import Footer from './components/Footer'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Benefits></Benefits>
         <Models></Models>
         <Contact></Contact>
+        <Footer></Footer>
       </MainTemplate>
     </>
   )

@@ -1,0 +1,38 @@
+@import './../assets/styles/global.scss';
+
+.footer__container {
+  width: 100%;
+  height: 25vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $botton-color-secondary;
+  
+  
+  h3 {
+    font-family:  $font-primary;
+    color: white;
+    font-size: $letter-size-xl;
+    font-weight: bold;
+    margin: 20px 0;
+  }
+
+  button {
+    margin: 0 auto;
+    color: white;
+    background-color: $letter-color-secondary;
+    font-weight: 500;
+    font-family: $font-secundary;
+    font-size: $letter-size-l;
+    border: none;
+    width: 150px;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 10px;
+
+    &:hover {
+      background-color: #230f2be0;
+    }
+  }
+}
