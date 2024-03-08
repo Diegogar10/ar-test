@@ -29,40 +29,37 @@ const CarruselGalery = (
     const containerRef = useRef(null);
     const textRef = useRef(null);
     const containerNewRef = useRef(null);
+    const element3: Element = containerNewRef.current?.children[0];
+
+    const efectScroll = (element1, element2, element3) => {
+      element1.scrollIntoView({ behavior:'smooth'});
+      setTimeout(()=> {
+        element2.scrollIntoView({});
+        element3.scrollIntoView({block:'end', behavior:'smooth'});
+      },1000)
+    }
     
     const handleAncla = (e: Event) => {
       e.preventDefault();
       const index = e.target?.getAttribute('data-info');
       const element1: Element = containerRef.current?.children[index];
       const element2: Element = textRef.current?.children[index];
-      const element3: Element = containerNewRef.current?.children[0];
-      element1.scrollIntoView({behavior:'smooth'});
-      setTimeout(()=> {
-        element2.scrollIntoView({behavior:'smooth'});
-        element3.scrollIntoView({block:'end', behavior:'smooth'});
-        setNum(index);
-      },800)
+      efectScroll(element1, element2, element3);
+      setNum(index);
     }
 
     const handleButtonAdd = () => {
       let element1: Element ;
       let element2: Element ;
-      const element3: Element = containerNewRef.current?.children[0];
       let index: number;
       if(num == 2){
         index = 0;
-        element1 = containerRef.current?.children[index];
-        element2 = textRef.current?.children[index];
       } else {
         index = num + 1;
-        element1 = containerRef.current?.children[index];  
-        element2 = textRef.current?.children[index];  
       }
-      element1.scrollIntoView({behavior:'smooth'});
-      setTimeout(()=> {
-        element2.scrollIntoView({behavior:'smooth'});
-        element3.scrollIntoView({block:'end', behavior:'smooth'});
-      },800)
+      element1 = containerRef.current?.children[index];  
+      element2 = textRef.current?.children[index];  
+      efectScroll(element1, element2, element3);
       setNum(index);
     }
 
@@ -73,18 +70,12 @@ const CarruselGalery = (
       let index: number;
       if(num == 0){
         index = 2;
-        element1 = containerRef.current?.children[index];
-        element2 = textRef.current?.children[index];
       } else {
         index = num - 1;
-        element1 = containerRef.current?.children[index];  
-        element2 = textRef.current?.children[index];  
       }
-      element1.scrollIntoView({behavior:'smooth'});
-      setTimeout(()=> {
-        element2.scrollIntoView({behavior:'smooth'});
-        element3.scrollIntoView({block:'end', behavior:'smooth'});
-      },800)
+      element1 = containerRef.current?.children[index];  
+      element2 = textRef.current?.children[index];  
+      efectScroll(element1, element2, element3);
       setNum(index);
     }
 
@@ -98,7 +89,7 @@ const CarruselGalery = (
         <menu className='menu__container'>
           {
             aptos.map((item, index:number) => 
-              <li className={num == index ? 'visited' : ''} key={index}><a href='' data-info={index} onClick={(e)=> handleAncla(e)}>{item.title}</a></li>
+              <li className={num == index ? 'visited' : ''} key={index}><a href='' data-info={index} onClick={handleAncla}>{item.title}</a></li>
             )
           }
         </menu>
