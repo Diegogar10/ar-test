@@ -6,7 +6,7 @@ const Intro = () => {
   return (
     <section className="intro__project" id='intro'>
       <div className="project__title">
-        <h1>reserva de cajicá</h1>
+        <h1>Reserva de cajicá</h1>
         <h2>Etapa 2</h2>
       </div>
       <div className="project__owner">
