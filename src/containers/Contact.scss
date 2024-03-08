@@ -1,0 +1,121 @@
+@import './../assets/styles/global.scss';
+
+.contact__container {
+  position: relative;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: url('./../assets/images/contact.webp');
+  background-repeat: no-repeat;
+  background-position: right;
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    background: linear-gradient(to right, #000000f8 15%, #00000000 100%);
+  }
+
+  .contact__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 28%;
+    height: 70vh;
+    padding: 25px;
+    border-radius: 12px;
+    background: white;
+    box-shadow: #ffffff70 0 0 15px;
+    z-index: 1;
+
+    h3 {
+      font-family:  $font-primary;
+      color: $botton-color-primary;
+      font-size: $letter-size-l;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+
+    p {
+      font-family:  $font-primary;
+      color: $letter-color-secondary;
+      font-size: $letter-size-m;
+      font-weight: 500;
+      text-align: justify;
+      margin: 10px;
+    }
+
+    .contact__inputs {
+      width: 80%;
+      height: 70vh;
+      display: flex;
+      color: $letter-color-secondary;
+      flex-direction: column;
+      font-family: $font-secundary;
+      font-size: $letter-size-m;
+      justify-content: space-evenly;
+
+      div {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        input {
+          border: none;
+          background: #00000010;
+          border-radius: 15px;
+          padding: 10px;
+          font-family: $font-secundary;
+        }
+      }
+
+      button {
+        margin: 0 auto;
+        color: white;
+        background-color: $botton-color-secondary;
+        border: none;
+        width: 150px;
+        padding: 12px;
+        font-weight: bold;
+        border-radius: 10px;
+
+        &:hover {
+          background-color: #fc5b5b;
+        }
+      }
+    }
+  }
+
+  .contact__info {
+    margin-right: 100px;
+    color: white;
+    z-index: 1;
+
+    h3 {
+      font-family: $font-primary;
+      font-size: $letter-size-xxl;
+      text-shadow: #00000050 0 0 10px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+
+    p{
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      font-family: $font-secundary;
+      font-size: $letter-size-l;
+      font-weight: 500;
+      text-shadow: #00000050 0 0 8px;
+      margin-bottom: 20px;
+      margin-left: 10px;
+    }
+
+  }
+
+}
