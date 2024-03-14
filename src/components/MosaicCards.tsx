@@ -20,10 +20,10 @@ const MosaicCards = () => {
       <div ref={ref} className="mosaic__container">
         <div className="mosaic__container--dinamic">
           {
-            inView && <div className='contact__buttons'>
-              <button className={inView ? '':'visible'} ><WhatsAppIcon/>Escribenos</button>
-              <button className={inView ? '':'visible'} ><PhoneInTalkIcon/>Te llamamos</button>
-              <button className={inView ? '':'visible'} ><TrendingUpIcon/>Cotiza y separa</button>
+            !inView && <div className='contact__buttons'>
+              <button className={!inView && 'visible'} ><WhatsAppIcon/>Escribenos</button>
+              <button className={!inView && 'visible'} ><PhoneInTalkIcon/>Te llamamos</button>
+              <button className={!inView && 'visible'} ><TrendingUpIcon/>Cotiza y separa</button>
             </div>
           }
           <div className={inView?"aparment__container animate":"aparment__container"} role="mosaico de imagenes del apartamento">
