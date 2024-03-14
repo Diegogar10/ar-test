@@ -21,15 +21,15 @@ const MosaicCards = () => {
         <div className="mosaic__container--dinamic">
           {
             inView && <div className='contact__buttons'>
-              <button className={inView && 'visible'} ><WhatsAppIcon/>Escribenos</button>
-              <button className={inView && 'visible'} ><PhoneInTalkIcon/>Te llamamos</button>
-              <button className={inView && 'visible'} ><TrendingUpIcon/>Cotiza y separa</button>
+              <button className={inView ? '':'visible'} ><WhatsAppIcon/>Escribenos</button>
+              <button className={inView ? '':'visible'} ><PhoneInTalkIcon/>Te llamamos</button>
+              <button className={inView ? '':'visible'} ><TrendingUpIcon/>Cotiza y separa</button>
             </div>
           }
           <div className={inView?"aparment__container animate":"aparment__container"} role="mosaico de imagenes del apartamento">
             {
               info.aptos.map((item: infoCard, index:number)=>
-                <figure className={inView?`card ${item.site}__animate`:`card ${item.site}`} key={index}>
+                <figure className={inView?`card ${item.site}`:`card ${item.site}__animate`} key={index}>
                   <img src={item.urlImage} alt={item.altImage}/>
                 </figure>
               )
